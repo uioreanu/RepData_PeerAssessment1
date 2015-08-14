@@ -70,6 +70,12 @@ plot(dsMean$interval,
             xlab="5-minute intervals across one day",
             ylab="averaged number of steps")
 
+# point the maximum
+abline(v = dsMean[which.max(dsMean$steps),]$interval, lwd=2, col="green")
+
+# label the line
+text(1300, 150, paste("maximum steps:", round(max(dsMean$steps))), col = "green")
+
 print(paste('Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?'))
 dsMean[which.max(dsMean$steps),]
 
